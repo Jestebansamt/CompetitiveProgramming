@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/SANDRA CORREDOR/Documents/Programacion/Files_Visual_Studio_Code/PC/USACO/Bronze/Simulation/TeamTicTacToe",
-      "program": "c:/Users/SANDRA CORREDOR/Documents/Programacion/Files_Visual_Studio_Code/PC/USACO/Bronze/Simulation/TeamTicTacToe/build/Debug/outDebug",
+      "cwd": "c:/Users/SANDRA CORREDOR/Documents/Programacion/Files_Visual_Studio_Code/PC/CompetitiveProgramming/USACO/Bronze/Simulation/TeamTicTacToe",
+      "program": "c:/Users/SANDRA CORREDOR/Documents/Programacion/Files_Visual_Studio_Code/PC/CompetitiveProgramming/USACO/Bronze/Simulation/TeamTicTacToe/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
