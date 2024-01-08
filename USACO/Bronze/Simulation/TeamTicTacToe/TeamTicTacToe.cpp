@@ -5,17 +5,24 @@ using namespace std;
 
 set<set<char>> s; 
 set<char> c;
+set<char> b;
+set<char> d;
+set<char> a;
+
+void countDiff2(){
+    s.insert(d);
+    s.insert(c);
+}
 
 void countDiff(){
-    s.insert(c);
-    c.clear();
+    s.insert(a);
+    s.insert(b);
+    a.clear();
+    b.clear();
 }
 
 int main(){
-    #ifndef ONLINE_JUDGE
-        freopen("i.txt", "r", stdin);
-    #endif
-
+    
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
@@ -28,34 +35,20 @@ int main(){
 
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            c.insert(v[i][j]); 
+            a.insert(v[i][j]);
+            b.insert(v[j][i]); 
         }
         countDiff();
+        c.insert(v[i][i]);
+        d.insert(v[i][2-i]);    
     }
-
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-            c.insert(v[j][i]); 
-        }
-        countDiff();
-    }
-
-    for(int i = 0; i < 3; i++){
-        c.insert(v[i][i]); 
-    }
-    countDiff();
-
-    for(int i = 0; i < 3; i++){
-        c.insert(v[i][2-i]); 
-    }
-    countDiff();
+    countDiff2();
 
     for(const auto& a : s){
         if(a.size() == 1) one++;
         if(a.size() == 2) two++;
     }
-
+    
     cout << one << "\n" << two;
-
     return 0;
 }
