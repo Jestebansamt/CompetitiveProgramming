@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "valarray": "cpp",
+        "iostream": "cpp"
+    }
+}

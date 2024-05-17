@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "source_location": "cpp",
+        "stacktrace": "cpp",
+        "iostream": "cpp",
+        "complex": "cpp"
+    }
+}

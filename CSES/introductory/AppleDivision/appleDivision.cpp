@@ -1,20 +1,33 @@
-// made by Esteban Santacruz (@jusantacruzc)
-
+// made by Esteban Santacruz (https://github.com/Jestebansamt)
 
 #include <bits/stdc++.h>
+
+#define REP(i,n) for(int i = 0; i < n ; i++)
 using namespace std;
 
-vector<long long> sum;
-vector<int> subset;
 int n;
 vector<int> vec;
- 
-int dp(int index, int k, int m, vector<int>& vec){
-    if(index+1 == n) return 0;
-    int ans = 0;
-    ans = dp(index+1, k+vec[index], m, vec) - dp(index+1, k , m+vec[index], vec);
+vector<int> cvec;
+long long ans = 1e9 + 1, total= 0;
+
+long long solve(int index){
+    if(index >= n || cvec.size() == n - 1 ){
+
+        long long currentSum = 0;
+        for(int i: cvec) currentSum += i;
+
+        long long current = abs((total - currentSum) - currentSum );
+        ans = min(ans, current);
+        
+    }else{
+        solve(index+1);
+        cvec.push_back(vec[index]);
+        
+        solve(index+1);
+        cvec.pop_back();
+        
+    }
     return ans;
-   
 }
 
 
@@ -22,16 +35,17 @@ int main(){
     #ifndef ONLINE_JUDGE
         freopen("i.txt", "r", stdin);
     #endif
-
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
     cin >> n;
-    vector<int> vec(n);
-
-    for(int i = 0; i < n; i++) cin >> vec[i];
-    cout << dp(0, 0, 0, vec);
+    vec.resize(n);
+    for(auto& a: vec ){
+        cin >> a;
+        total += a;
+    }
     
-
+    cout << solve(0);
     return 0;
 }
+
